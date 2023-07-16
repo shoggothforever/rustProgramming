@@ -1,10 +1,11 @@
-use core::num;
 use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
 fn main() {
     println!("Guess the number");
     let _ans = rand::thread_rng().gen_range(1..=100);
+    let emo ="U+1F605";
+    println!("{}",emo);
     loop{
     let mut guess=String::new();
     println!("input your guess number");
