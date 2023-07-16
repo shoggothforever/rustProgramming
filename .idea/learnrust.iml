@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="Go" enabled="true" />
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/chapter-567/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/control_flow/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/guessnumber/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/chapter-567/target" />
+      <excludeFolder url="file://$MODULE_DIR$/control_flow/target" />
+      <excludeFolder url="file://$MODULE_DIR$/guessnumber/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
