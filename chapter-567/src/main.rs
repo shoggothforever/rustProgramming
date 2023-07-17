@@ -19,7 +19,7 @@ fn matcher(ms :&Ms){
         match ms{
             //关联到枚举的内部数据
             // Ms::Ultra=> ms.print(),
-            // Ms::Vessel(Gamer) =>ms.print(),
+            Ms::Vessel(Gamer) =>ms.print(),
             _ =>{
                 print!("string_view");
                 ms.print()
