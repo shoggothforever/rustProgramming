@@ -3,22 +3,36 @@ use std::collections::HashMap;
 use std::error::Error;
 use std::io::Read;
 use std::env;
+use std::env::Args;
+
 pub struct FileHead{
     pub filename:String,
     pub query:String,
     pub sensitive:bool
 }
 impl FileHead {
-    pub fn new(args: &[String]) -> Result<FileHead,&'static str> {
+    pub fn new(mut args: env::Args) -> Result<FileHead,&'static str> {
         if args.len() < 3 {
             return Err("请按照如下格式输入信息 [file_name] [regex]");
         }
-        let filename = args[1].clone();
-        let query = args[2].clone();
-        let sensitive=if args[3]=="0"{
-            false
-        }else{
-            true
+        args.next();
+        let filename = match args.next(){
+            Some(s)=>s,
+            None=>panic!()
+        };
+        let query = match args.next(){
+            Some(s)=>s,
+            None=>panic!()
+        };;
+        let sensitive=match args.next(){
+            Some(s)=>{
+                if s=="0"{
+                    true
+                }else{
+                    false
+                }
+            },
+            None=>panic!()
         };
         Ok(FileHead{filename,query,sensitive })
     }
@@ -36,23 +50,25 @@ pub fn run(fh:&FileHead)->Result<(),Box<dyn Error>>{
 }
 
 pub fn search<'a>(query:&str,content:&'a str)->Vec<&'a str>{
-    let mut res =Vec::new();
-    for line in content.lines(){
-        if line.contains(query){
-            res.push(line)
-        }
-    }
-    res
+    // let mut res =Vec::new();
+    // for line in content.lines(){
+    //     if line.contains(query){
+    //         res.push(line)
+    //     }
+    // }
+    // res
+    content.lines().filter(|line|line.contains(&query)).collect()
 }
 pub fn search_insensitive<'a>(query:&str,content:&'a str)->Vec<&'a str>{
-    let mut res =Vec::new();
-    let query=query.to_lowercase();
-    for line in content.lines(){
-        if line.to_lowercase().contains(&query){
-            res.push(line)
-        }
-    }
-    res
+    // let mut res =Vec::new();
+    // let query=query.to_lowercase();
+    // for line in content.lines(){
+    //     if line.to_lowercase().contains(&query){
+    //         res.push(line)
+    //     }
+    // }
+    // res
+    content.lines().filter(|line|line.to_lowercase().contains(&query.to_lowercase())).collect()
 }
 
 
