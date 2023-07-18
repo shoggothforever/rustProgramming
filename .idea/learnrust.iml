@@ -9,12 +9,14 @@
       <sourceFolder url="file://$MODULE_DIR$/learn_map_panic/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/minigrep/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/iterator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/wrappointer/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/chapter-567/target" />
       <excludeFolder url="file://$MODULE_DIR$/control_flow/target" />
       <excludeFolder url="file://$MODULE_DIR$/guessnumber/target" />
       <excludeFolder url="file://$MODULE_DIR$/learn_map_panic/target" />
       <excludeFolder url="file://$MODULE_DIR$/minigrep/target" />
       <excludeFolder url="file://$MODULE_DIR$/iterator/target" />
+      <excludeFolder url="file://$MODULE_DIR$/wrappointer/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
